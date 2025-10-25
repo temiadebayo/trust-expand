@@ -2,12 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #091266;
+  --primary: #091266;
+  --secondary: #5E17EB;
+  --accent: #5E17EB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -22,5 +28,58 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5E17EB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #091266;
+}
+
+/* Smooth animations */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #091266 0%, #5E17EB 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #5E17EB 0%, #091266 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #5E17EB 0%, #8B5CF6 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modern shadows */
+.shadow-modern {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-modern-lg {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
