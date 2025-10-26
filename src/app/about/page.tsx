@@ -22,8 +22,16 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Modern Beauty Salon" 
+                className="w-full h-96 object-cover rounded-3xl shadow-modern"
+              />
+            </div>
             <div className="bg-gray-50 rounded-3xl p-12 shadow-modern">
+              <h2 className="text-3xl font-bold text-[#091266] mb-6">Our Story</h2>
               <p className="text-xl text-gray-700 leading-relaxed">
                 Trust Expand was founded on the recognition that while the Nigerian beauty industry is rich with passion and skilled talent, it often lacks the standardized professionalism and business structure needed for global success. We stepped in to create an ecosystem where talent is verified (KYC), rewarded (Tiers), and managed (Expert Oversight), transforming individual careers and businesses into sustainable, profitable ventures.
               </p>

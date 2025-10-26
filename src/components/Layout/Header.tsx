@@ -34,12 +34,19 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className={`text-3xl font-bold transition-colors duration-300 ${
-              isScrolled 
-                ? 'gradient-primary bg-clip-text text-transparent' 
-                : 'text-white'
-            }`}>
-              Trust Expand
+            <Link href="/" className="flex items-center space-x-3">
+              <img 
+                src="/logo_1.png" 
+                alt="Trust Expand Logo" 
+                className="h-12 w-auto"
+              />
+              <span className={`text-3xl font-bold transition-colors duration-300 ${
+                isScrolled 
+                  ? 'gradient-primary bg-clip-text text-transparent' 
+                  : 'text-white'
+              }`}>
+                Trust Expand
+              </span>
             </Link>
           </div>
 

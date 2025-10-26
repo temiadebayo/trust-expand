@@ -63,10 +63,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Customer Channel */}
             <Card className="text-center group hover:scale-105 transition-all duration-300">
-              <div className="w-24 h-24 gradient-primary rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+              <div className="mb-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                  alt="Professional Barber" 
+                  className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-2xl font-bold text-[#091266] mb-6">I Need a Service</h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
@@ -79,10 +81,12 @@ export default function ContactPage() {
 
             {/* Professional Channel */}
             <Card className="text-center group hover:scale-105 transition-all duration-300">
-              <div className="w-24 h-24 gradient-secondary rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
-                </svg>
+              <div className="mb-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                  alt="Professional Networking" 
+                  className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-2xl font-bold text-[#091266] mb-6">I Am a Professional</h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
@@ -95,10 +99,12 @@ export default function ContactPage() {
 
             {/* Business Channel */}
             <Card className="text-center group hover:scale-105 transition-all duration-300">
-              <div className="w-24 h-24 gradient-accent rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+              <div className="mb-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                  alt="Salon Management" 
+                  className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               <h3 className="text-2xl font-bold text-[#091266] mb-6">I Am a Salon/Owner</h3>
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
