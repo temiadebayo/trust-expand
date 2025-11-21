@@ -13,7 +13,7 @@ export const BookingCTA: React.FC = () => {
           Experience professional excellence with our vetted professionals. Book your appointment today and let us take care of you.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button variant="accent" size="lg" href="/booking" className="shadow-modern-lg">
+          <Button variant="accent" size="lg" href="/contact#booking" className="shadow-modern-lg">
             Book an Appointment
           </Button>
           <Button variant="outline" size="lg" href="/services" className="border-white text-white hover:bg-white hover:text-[#091266]">

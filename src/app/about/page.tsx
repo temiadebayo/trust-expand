@@ -27,9 +27,9 @@ export default function AboutPage() {
                 className="w-full h-96 object-cover rounded-3xl shadow-modern"
               />
             </div>
-            <div className="bg-gray-50 rounded-3xl p-12 shadow-modern">
+            <div className="bg-gray-50 rounded-3xl p-10 shadow-modern">
               <h2 className="text-3xl font-bold text-[#091266] mb-6">Our Story</h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Trust Expand was founded on the recognition that while the Nigerian beauty industry is rich with passion and skilled talent, it often lacks the standardized professionalism and business structure needed for global success. We stepped in to create an ecosystem where talent is verified (KYC), rewarded (Tiers), and managed (Expert Oversight), transforming individual careers and businesses into sustainable, profitable ventures.
               </p>
             </div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
             Mission, Vision, and Values
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Mission */}
             <div className="bg-[#091266] text-white p-10 rounded-3xl shadow-modern-lg">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
@@ -52,7 +52,7 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Our Mission</h3>
               <p className="text-white/90 leading-relaxed">
                 To take the beauty industry to greater heights by providing the structure, support, and community necessary for every professional and business to succeed.
               </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Our Vision</h3>
               <p className="text-white/90 leading-relaxed">
                 To build a global market where the beauty industry thrives. When you talk about the beauty industry in Nigeria, you're talking about Trust Expand.
               </p>

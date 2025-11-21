@@ -36,7 +36,7 @@ export default function HomePage() {
 
             {/* CTAs - Centered */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button variant="accent" size="lg" href="/booking" className="shadow-modern-lg">
+              <Button variant="accent" size="lg" href="/contact#booking" className="shadow-modern-lg">
                 Find a Professional
               </Button>
               <Button variant="outline" size="lg" href="/contact" className="border-white text-white hover:bg-white hover:text-[#091266]">
@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* Core Service Pillars */}
       <section className="py-24 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
               Our Core Service Pillars
             </h2>
@@ -75,7 +75,7 @@ export default function HomePage() {
               description="Access our network of KYC-verified stakeholders (Barbers, Stylists, etc.)."
               className="text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="mt-8">
+              <div className="mt-6">
                 <div className="mb-6">
                   <img 
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
@@ -95,7 +95,7 @@ export default function HomePage() {
               description="Expert guidance from startup to operational excellence, covering design, implementation, and management."
               className="text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="mt-8">
+              <div className="mt-6">
                 <div className="mb-6">
                   <img 
                     src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
@@ -115,7 +115,7 @@ export default function HomePage() {
               description="Exclusive community for elite, high-level networking and peer-to-peer growth."
               className="text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="mt-8">
+              <div className="mt-6">
                 <div className="mb-6">
                   <img 
                     src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 

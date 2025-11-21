@@ -21,7 +21,7 @@ export default function ServicesPage() {
       {/* Service 1: The Trust Network */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-12 bg-white shadow-modern-lg border border-gray-100">
+          <Card className="p-10 bg-white shadow-modern-lg border border-gray-100">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mb-8">
@@ -51,7 +51,7 @@ export default function ServicesPage() {
       {/* Service 2: Expert Salon Management */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-12 bg-white shadow-modern-lg border border-gray-100">
+          <Card className="p-10 bg-white shadow-modern-lg border border-gray-100">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="w-32 h-32 bg-gray-100 rounded-3xl flex items-center justify-center order-2 lg:order-1">
                 <img 
@@ -81,7 +81,7 @@ export default function ServicesPage() {
       {/* Service 3: Professional Excellence */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-12 bg-white shadow-modern-lg border border-gray-100">
+          <Card className="p-10 bg-white shadow-modern-lg border border-gray-100">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mb-8">

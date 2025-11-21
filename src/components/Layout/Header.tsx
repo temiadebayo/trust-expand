@@ -77,14 +77,15 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Client Login Button */}
+          {/* Book Appointment Button */}
           <div className="hidden md:block">
             <Button 
               variant={isScrolled ? "accent" : "outline"} 
               size="sm"
+              href="/contact#booking"
               className={isScrolled ? "" : "border-white text-white hover:bg-white hover:text-[#091266]"}
             >
-              Client Login
+              Book an Appointment
             </Button>
           </div>
 
@@ -134,10 +135,11 @@ export const Header: React.FC = () => {
               <div className="px-3 py-2">
                 <Button 
                   variant={isScrolled ? "accent" : "outline"} 
-                  size="sm" 
+                  size="sm"
+                  href="/contact#booking"
                   className={`w-full ${isScrolled ? "" : "border-white text-white hover:bg-white hover:text-[#091266]"}`}
                 >
-                  Client Login
+                  Book an Appointment
                 </Button>
               </div>
             </div>

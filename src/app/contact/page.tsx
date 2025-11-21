@@ -1,9 +1,75 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Button } from '../../components/UI/Button';
 import { Card } from '../../components/UI/Card';
 import { BookingCTA } from '../../components/BookingCTA';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    customerName: '',
+    customerEmail: '',
+    customerPhone: '',
+    serviceType: '',
+    appointmentDate: '',
+    appointmentTime: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const getMinDate = () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().split('T')[0];
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          customerName: '',
+          customerEmail: '',
+          customerPhone: '',
+          serviceType: '',
+          appointmentDate: '',
+          appointmentTime: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -21,10 +87,193 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Booking Form Section */}
+      <section id="booking" className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
+              Book an Appointment
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Fill in your details to book your appointment with one of our vetted professionals
+            </p>
+          </div>
+
+          {/* Success Message */}
+          {submitStatus === 'success' && (
+            <div className="mb-8 bg-green-50 border-2 border-green-200 rounded-2xl p-6">
+              <div className="text-center">
+                <div className="text-4xl mb-3">✓</div>
+                <h3 className="text-2xl font-bold text-green-800 mb-3">
+                  Booking Request Sent Successfully!
+                </h3>
+                <p className="text-green-700">
+                  We've received your booking request and will contact you shortly to confirm your appointment.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Error Message */}
+          {submitStatus === 'error' && (
+            <div className="mb-8 bg-red-50 border-2 border-red-200 rounded-2xl p-6">
+              <div className="text-center">
+                <div className="text-4xl mb-3">✗</div>
+                <h3 className="text-2xl font-bold text-red-800 mb-3">
+                  Error Sending Booking Request
+                </h3>
+                <p className="text-red-700">
+                  Please try again or contact us directly at bookings@trustexpandng.com
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Booking Form */}
+          <Card>
+            <form onSubmit={handleSubmit} className="space-y-6 pt-4">
+              {/* Service Type */}
+              <div>
+                <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
+                  Service Type *
+                </label>
+                <select
+                  id="serviceType"
+                  name="serviceType"
+                  value={formData.serviceType}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                >
+                  <option value="">Select a service</option>
+                  <option value="Haircut & Styling">Haircut & Styling</option>
+                  <option value="Beard Grooming">Beard Grooming</option>
+                  <option value="Hair Treatment">Hair Treatment</option>
+                  <option value="Full Service">Full Service</option>
+                </select>
+              </div>
+
+              {/* Customer Name */}
+              <div>
+                <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="customerName"
+                  name="customerName"
+                  value={formData.customerName}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label htmlFor="customerEmail" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="customerEmail"
+                  name="customerEmail"
+                  value={formData.customerEmail}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label htmlFor="customerPhone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="customerPhone"
+                  name="customerPhone"
+                  value={formData.customerPhone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  placeholder="+234 XXX XXX XXXX"
+                />
+              </div>
+
+              {/* Date and Time */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="appointmentDate" className="block text-sm font-medium text-gray-700 mb-2">
+                    Appointment Date *
+                  </label>
+                  <input
+                    type="date"
+                    id="appointmentDate"
+                    name="appointmentDate"
+                    value={formData.appointmentDate}
+                    onChange={handleChange}
+                    required
+                    min={getMinDate()}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="appointmentTime" className="block text-sm font-medium text-gray-700 mb-2">
+                    Appointment Time *
+                  </label>
+                  <input
+                    type="time"
+                    id="appointmentTime"
+                    name="appointmentTime"
+                    value={formData.appointmentTime}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Additional Message (Optional)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  placeholder="Any special requests or notes..."
+                />
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex gap-4">
+                <Button
+                  type="submit"
+                  variant="accent"
+                  size="lg"
+                  className="flex-1"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Submit Booking Request'}
+                </Button>
+              </div>
+            </form>
+          </Card>
+        </div>
+      </section>
+
       {/* General Contact Information */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-12 text-center bg-[#5E17EB] text-white">
+          <div className="p-12 text-center bg-[#5E17EB] text-white rounded-2xl shadow-modern-lg">
             <h2 className="text-3xl font-bold mb-12 text-white">General Inquiries</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="group">
@@ -46,12 +295,12 @@ export default function ContactPage() {
                 <p className="text-white/90 text-lg">+234 XX XXX XXXX</p>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
       {/* Audience-Specific CTAs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-16 text-center">
             How Can We Help You?
@@ -71,8 +320,8 @@ export default function ContactPage() {
               <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                 Book an appointment with a verified professional.
               </p>
-              <Button variant="primary" size="lg" href="/booking" className="w-full shadow-modern-lg">
-                Find a Vetted Pro Now
+              <Button variant="primary" size="lg" href="/contact#booking" className="w-full shadow-modern-lg">
+                Book an Appointment
               </Button>
             </Card>
 
@@ -116,7 +365,7 @@ export default function ContactPage() {
       </section>
 
       {/* Additional Information */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#5E17EB] text-white p-12 rounded-3xl shadow-modern-lg">
             <div className="text-center mb-12">
