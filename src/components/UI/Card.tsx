@@ -17,7 +17,7 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const variantClasses = {
     default: 'bg-white shadow-modern border border-gray-100',
-    gradient: 'gradient-primary text-white shadow-modern-lg',
+    gradient: 'bg-[#091266] text-white shadow-modern-lg',
     glass: 'glass text-white shadow-modern-lg',
   };
 

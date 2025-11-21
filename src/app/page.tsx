@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../components/UI/Button';
 import { Card } from '../components/UI/Card';
+import { BookingCTA } from '../components/BookingCTA';
 
 export default function HomePage() {
   return (
@@ -18,8 +19,8 @@ export default function HomePage() {
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50"></div>
         
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 gradient-primary opacity-60"></div>
+        {/* Color overlay */}
+        <div className="absolute inset-0 bg-[#5E17EB] opacity-60"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
@@ -134,7 +135,7 @@ export default function HomePage() {
       {/* Image Gallery Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#091266] text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#5E17EB] text-center mb-16">
             Our Work in Action
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -191,16 +192,12 @@ export default function HomePage() {
       </section>
 
       {/* USP Callout */}
-      <section className="py-24 gradient-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-        </div>
-        
+      <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-8">
               Look Good, Feel Good, 
-              <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+              <span className="block text-white/90">
                 Guaranteed.
               </span>
             </h2>
@@ -219,6 +216,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Book Appointment CTA */}
+      <BookingCTA />
     </div>
   );
 }

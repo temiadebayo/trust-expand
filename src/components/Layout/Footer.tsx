@@ -3,18 +3,17 @@ import Link from 'next/link';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="gradient-primary text-white">
+    <footer className="bg-[#091266] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center mb-6">
               <img 
                 src="/logo_2.png" 
                 alt="Trust Expand Logo" 
                 className="h-12 w-auto"
               />
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">Trust Expand</h3>
             </div>
             <p className="text-white/90 mb-6 leading-relaxed">
               Professional is Our Hallmark. The comprehensive consulting and management firm dedicated to elevating the Nigerian beauty industry.

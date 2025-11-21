@@ -55,17 +55,17 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modern gradient backgrounds */
+/* Brand color backgrounds */
 .gradient-primary {
-  background: linear-gradient(135deg, #091266 0%, #5E17EB 100%);
+  background: #091266;
 }
 
 .gradient-secondary {
-  background: linear-gradient(135deg, #5E17EB 0%, #091266 100%);
+  background: #5E17EB;
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #5E17EB 0%, #8B5CF6 100%);
+  background: #5E17EB;
 }
 
 /* Glass morphism effect */

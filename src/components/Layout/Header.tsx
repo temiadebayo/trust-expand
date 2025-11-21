@@ -2,20 +2,32 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '../UI/Button';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
+    // On non-home pages, always show scrolled state
+    if (!isHomePage) {
+      setIsScrolled(true);
+      return;
+    }
+
+    // On home page, check scroll position
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Check initial scroll position
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -34,19 +46,12 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center">
               <img 
                 src="/logo_1.png" 
                 alt="Trust Expand Logo" 
                 className="h-12 w-auto"
               />
-              <span className={`text-3xl font-bold transition-colors duration-300 ${
-                isScrolled 
-                  ? 'gradient-primary bg-clip-text text-transparent' 
-                  : 'text-white'
-              }`}>
-                Trust Expand
-              </span>
             </Link>
           </div>
 
@@ -65,7 +70,7 @@ export const Header: React.FC = () => {
                 {item.name}
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
                   isScrolled 
-                    ? 'bg-gradient-to-r from-[#5E17EB] to-[#091266]' 
+                    ? 'bg-[#5E17EB]' 
                     : 'bg-white'
                 }`}></span>
               </Link>

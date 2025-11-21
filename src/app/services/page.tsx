@@ -1,20 +1,17 @@
 import React from 'react';
 import { Card } from '../../components/UI/Card';
 import { Button } from '../../components/UI/Button';
+import { BookingCTA } from '../../components/BookingCTA';
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-24 gradient-primary text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-        </div>
-        
+      <section className="relative py-24 bg-[#091266] text-white overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-8">
             Complete Solutions for 
-            <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            <span className="block text-white/90">
               Professional Beauty Excellence
             </span>
           </h1>
@@ -64,7 +61,7 @@ export default function ServicesPage() {
                 />
               </div>
               <div className="flex-1 order-1 lg:order-2">
-                <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mb-8">
+                <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mb-8">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -87,7 +84,7 @@ export default function ServicesPage() {
           <Card className="p-12 bg-white shadow-modern-lg border border-gray-100">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-1">
-                <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mb-8">
+                <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mb-8">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -145,15 +142,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 gradient-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-        </div>
-        
+      <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Experience 
-            <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            <span className="block text-white/90">
               Professional Excellence?
             </span>
           </h2>
@@ -170,6 +163,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Book Appointment CTA */}
+      <BookingCTA />
     </div>
   );
 }
