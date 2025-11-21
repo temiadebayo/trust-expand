@@ -31,7 +31,7 @@ export default function HomePage() {
             
             {/* Subheadline - Minimal */}
             <p className="text-2xl md:text-3xl text-white/90 mb-12 font-light">
-              Professional is Our Hallmark
+              Professionalism is our hallmark
             </p>
 
             {/* CTAs - Centered */}

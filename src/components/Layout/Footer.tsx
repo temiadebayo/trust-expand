@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
               />
             </div>
             <p className="text-white/90 mb-6 leading-relaxed">
-              Professional is Our Hallmark. The comprehensive consulting and management firm dedicated to elevating the Nigerian beauty industry.
+              Professionalism is our hallmark. The comprehensive consulting and management firm dedicated to elevating the Nigerian beauty industry.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-12 pt-8 text-center">
           <p className="text-white/80">
-            © 2024 Trust Expand. All rights reserved. | Professional is Our Hallmark.
+            © 2024 Trust Expand. All rights reserved. | Professionalism is our hallmark.
           </p>
         </div>
       </div>

@@ -90,7 +90,7 @@ export default function ServicesPage() {
                   </svg>
                 </div>
                 <h2 className="text-4xl font-bold mb-6 text-[#091266]">
-                  Professional is Our Hallmark: Upholding Excellence
+                  Professionalism is our hallmark: Upholding Excellence
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Our commitment to quality: Mandatory Trainings and Certification of stakeholders, and regular Site Inspection for quality control and assurance. Performance is tracked via Rating & Gamification.

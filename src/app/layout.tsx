@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trust Expand - Professional is Our Hallmark",
+  title: "Trust Expand - Professionalism is our hallmark",
   description: "The comprehensive consulting and management firm dedicated to elevating the Nigerian beauty industry through verified talent, expert management, and guaranteed quality.",
 };
 
