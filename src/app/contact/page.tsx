@@ -292,7 +292,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-semibold mb-4 text-white">Phone</h3>
-                <p className="text-white/90 text-lg">+234 XX XXX XXXX</p>
+                <p className="text-white/90 text-lg">+234 906 232 0242</p>
               </div>
             </div>
           </div>
