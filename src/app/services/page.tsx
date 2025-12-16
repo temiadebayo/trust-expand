@@ -108,35 +108,230 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service 4: Exclusive Support & Global Expansion */}
+      {/* Additional Services */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Premium Services */}
-            <Card className="p-10 text-center group hover:scale-105 transition-all duration-300 bg-white shadow-modern-lg border border-gray-100">
-              <div className="w-20 h-20 bg-[#5E17EB] rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
+              Additional Solutions for Beauty Businesses
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Beyond day-to-day staffing, Trust Expand supports you with training, retention, and reputation so your business stays fully booked and your team stays motivated.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Permanent Beauty Staffing */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Permanent Beauty Staffing" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-3xl font-bold mb-6 text-[#091266]">Premium Services</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Includes specialized services like Dermatology Consultations and access to the Exclusive Private Club community.
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Permanent Beauty Staffing</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We place vetted, long-term hires for salons, spas, nail studios, med-spas, and beauty clinics. Every candidate is screened for technical skill, attitude, and client-care standards.
               </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Hair stylists & colorists</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Barbers</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Makeup artists</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Nail technicians</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Lash & brow artists</span>
+              </div>
             </Card>
 
-            {/* Global Expansion Support */}
-            <Card className="p-10 text-center group hover:scale-105 transition-all duration-300 bg-white shadow-modern-lg border border-gray-100">
-              <div className="w-20 h-20 bg-[#091266] rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:rotate-12 transition-transform duration-500">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            {/* Temporary & Seasonal Cover */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Temporary & Seasonal Cover" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-3xl font-bold mb-6 text-[#091266]">Global Expansion Support</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Dedicated support for global talent with Job opportunities, securing working papers, visa processing, and relocation advisory.
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Temporary & Seasonal Cover</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Keep your calendar fully booked even when staff are on leave or during seasonal rush. We provide reliable cover who can adapt quickly to your service menu and pace.
               </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Holiday peaks</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Maternity cover</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Sickness cover</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Event-based bookings</span>
+              </div>
             </Card>
+
+            {/* Front-of-House & Management */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Front-of-House & Management" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Front-of-House & Management</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Beautiful spaces need strong teams at reception and in management. We source people who protect your brand, manage bookings, and keep your operations smooth.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Receptionists</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Salon coordinators</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Spa managers</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Area managers</span>
+              </div>
+            </Card>
+
+            {/* Skills Testing & Trade Tests */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Skills Testing & Trade Tests" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Skills Testing & Trade Tests</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We can run video-based or in-person technical tests so you see the candidate's work before you commit. You get a clear picture of their finishing quality and speed.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Hair & color tests</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Nail & art tests</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Facial & spa protocol tests</span>
+              </div>
+            </Card>
+
+            {/* Customer Experience Training */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Customer Experience Training" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Customer Experience Training</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Short, practical training for your team on consultation, upselling ethically, handling complaints, and creating a calm, luxury-feeling client journey.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Consultation scripts</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Retail recommendation</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Rebooking techniques</span>
+              </div>
+            </Card>
+
+            {/* Premium Services */}
+            <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
+              <div className="mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1621607501242-f51617711277?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  alt="Premium Services" 
+                  className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#091266]">Premium Services</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Includes specialized services like Dermatology Consultations and access to the Exclusive Private Club community for elite networking and growth.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Private Club access</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Dermatology consultations</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Elite networking</span>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work Process */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
+              How Trust Expand Works With You
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We keep the process simple and transparent, with clear timelines and communication so you always know what's happening with your search.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                1
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Define Your Perfect Hire</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  On a quick call, we map out your role, service list, schedule, culture, and must-have skills so we only send candidates who fit your reality, not just the job title.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                2
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Source & Pre-Vet Candidates</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  We tap into our beauty-only network and shortlist candidates. We pre-interview, check experience, and confirm availability before they ever reach your inbox.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                3
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Interviews & Trade Tests</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  You receive a curated shortlist with profiles and notes. We help coordinate interviews, trade tests, and trial days to see how they perform on the floor.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                4
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Offer, Onboarding & Check-Ins</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Once you choose your hire, we support offer negotiations and start dates, then check in with both sides to make sure the placement is settling in smoothly.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                5
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Replacement Support</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  If a placement doesn't work out within the agreed guarantee period, we prioritize a replacement search so you're not left short-staffed.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                6
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#091266] mb-3">Ongoing Talent Pipeline</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  For regular clients, we keep a warm pipeline ready so future roles are faster to fill and you can plan expansion with confidence.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

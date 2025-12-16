@@ -14,7 +14,7 @@ export const BookingCTA: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button variant="accent" size="lg" href="/contact#booking" className="shadow-modern-lg">
-            Book an Appointment
+            Contact Us
           </Button>
           <Button variant="outline" size="lg" href="/services" className="border-white text-white hover:bg-white hover:text-[#091266]">
             View Our Services

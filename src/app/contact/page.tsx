@@ -11,6 +11,7 @@ export default function ContactPage() {
     customerEmail: '',
     customerPhone: '',
     serviceType: '',
+    serviceLocation: '',
     appointmentDate: '',
     appointmentTime: '',
     message: '',
@@ -48,6 +49,7 @@ export default function ContactPage() {
           customerEmail: '',
           customerPhone: '',
           serviceType: '',
+          serviceLocation: '',
           appointmentDate: '',
           appointmentTime: '',
           message: '',
@@ -150,6 +152,25 @@ export default function ContactPage() {
                   <option value="Beard Grooming">Beard Grooming</option>
                   <option value="Hair Treatment">Hair Treatment</option>
                   <option value="Full Service">Full Service</option>
+                </select>
+              </div>
+
+              {/* Service Location */}
+              <div>
+                <label htmlFor="serviceLocation" className="block text-sm font-medium text-gray-700 mb-2">
+                  Service Location *
+                </label>
+                <select
+                  id="serviceLocation"
+                  name="serviceLocation"
+                  value={formData.serviceLocation}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                >
+                  <option value="">Select location type</option>
+                  <option value="In-Store">In-Store Service</option>
+                  <option value="Home Service">Home Service</option>
                 </select>
               </div>
 

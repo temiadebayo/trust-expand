@@ -29,17 +29,30 @@ export default function HomePage() {
               Trust Expand
             </h1>
             
-            {/* Subheadline - Minimal */}
-            <p className="text-2xl md:text-3xl text-white/90 mb-12 font-light">
-              Professionalism is our hallmark
+            {/* Subheadline - Enhanced */}
+            <p className="text-2xl md:text-3xl text-white/90 mb-8 font-light max-w-3xl mx-auto leading-relaxed">
+              Elite beauty professionals for salons, spas & clinics. We source, vet, and place verified specialists so you can focus on bookings, not CVs.
             </p>
+            
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white border border-white/30">
+                500+ placements made
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white border border-white/30">
+                72-hour average shortlist
+              </span>
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white border border-white/30">
+                KYC-verified professionals
+              </span>
+            </div>
 
             {/* CTAs - Centered */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button variant="accent" size="lg" href="/contact#booking" className="shadow-modern-lg">
                 Find a Professional
               </Button>
-              <Button variant="outline" size="lg" href="/contact" className="border-white text-white hover:bg-white hover:text-[#091266]">
+              <Button variant="outline" size="lg" href="/partner" className="border-white text-white hover:bg-white hover:text-[#091266]">
                 Partner With Us
               </Button>
             </div>
@@ -52,6 +65,59 @@ export default function HomePage() {
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Track Record Section */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
+              Proven Track Record in the Beauty Industry
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Trust Expand is built for beauty businesses. We understand busy schedules, last-minute cancellations, and the cost of an empty chair — and we staff to protect your revenue.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-8 bg-gray-50 rounded-3xl">
+              <div className="text-5xl font-bold text-[#5E17EB] mb-4">500+</div>
+              <p className="text-gray-600 text-lg">
+                Successful placements across salons, spas and med-spas
+              </p>
+            </div>
+            <div className="text-center p-8 bg-gray-50 rounded-3xl">
+              <div className="text-5xl font-bold text-[#5E17EB] mb-4">72 hrs</div>
+              <p className="text-gray-600 text-lg">
+                Average time to send your first shortlist of candidates
+              </p>
+            </div>
+            <div className="text-center p-8 bg-gray-50 rounded-3xl">
+              <div className="text-5xl font-bold text-[#5E17EB] mb-4">4.8★</div>
+              <p className="text-gray-600 text-lg">
+                Average rating from beauty businesses we partner with
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-[#091266] text-white p-10 rounded-3xl shadow-modern-lg">
+            <h3 className="text-2xl font-bold mb-6 text-center">Real Results from Our Partners</h3>
+            <ul className="space-y-4 max-w-3xl mx-auto">
+              <li className="flex items-start gap-4">
+                <span className="text-[#5E17EB] text-2xl">✓</span>
+                <span className="text-lg">High-end spa increased rebooking rate by 23% after we restructured their therapist team.</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-[#5E17EB] text-2xl">✓</span>
+                <span className="text-lg">Franchise salon group filled 9 locations with stylists and assistants before peak holiday season.</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-[#5E17EB] text-2xl">✓</span>
+                <span className="text-lg">New lash and brow bar opened with a full team in place four weeks before launch.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -191,26 +257,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#091266] mb-6">
+              What Our Partners Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We work quietly behind the scenes so your brand shines out front. Here's what beauty businesses share after partnering with Trust Expand.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-[#091266] text-white p-8 rounded-3xl shadow-modern-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-8xl text-white/10 font-serif leading-none">"</div>
+              <p className="text-lg mb-6 relative z-10 leading-relaxed">
+                "We spent months trying to hire senior stylists. Within ten days of working with Trust Expand, we had three candidates we would have happily hired. We took two, and our colour bookings are now waitlisted."
+              </p>
+              <footer className="text-white/80 text-sm relative z-10">Owner, GlowHaus Salon Collective</footer>
+            </div>
+            
+            <div className="bg-[#091266] text-white p-8 rounded-3xl shadow-modern-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-8xl text-white/10 font-serif leading-none">"</div>
+              <p className="text-lg mb-6 relative z-10 leading-relaxed">
+                "Our spa always struggled with turnover. Trust Expand helped us hire better and adjust our commission structure. Six months later, our team is stable, and our regular clients are noticing the difference."
+              </p>
+              <footer className="text-white/80 text-sm relative z-10">Director, Serenity Spa & Wellness</footer>
+            </div>
+            
+            <div className="bg-[#091266] text-white p-8 rounded-3xl shadow-modern-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-8xl text-white/10 font-serif leading-none">"</div>
+              <p className="text-lg mb-6 relative z-10 leading-relaxed">
+                "We opened a new lash and brow bar and needed a full team ready from day one. Trust Expand built a pipeline, handled all interviews, and we launched fully staffed weeks ahead of schedule."
+              </p>
+              <footer className="text-white/80 text-sm relative z-10">Founder, Velvet Lash Lounge</footer>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* USP Callout */}
       <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              Look Good, Feel Good, 
-              <span className="block text-white/90">
-                Guaranteed.
-              </span>
+              Ready to Stop Scrambling for Beauty Staff?
             </h2>
-            <p className="text-xl text-white/90 leading-relaxed mb-12">
-              Our mission is to ensure every customer of a Trust Expand partner leaves with a lasting positive impression. This is the Trust Expand promise of all-round care.
+            <p className="text-xl text-white/90 leading-relaxed mb-8">
+              Send us your role and we'll respond with a realistic hiring timeline, sample candidate profiles, and pricing for your salon, spa, or clinic — no obligation.
             </p>
+            <div className="flex flex-col items-center gap-4 mb-8">
+              <div className="text-white/90">Average first shortlist in 72 hours.</div>
+              <div className="text-white/90">Beauty-only placements — no generic recruiters.</div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button variant="accent" size="lg" href="/services" className="shadow-modern-lg">
-                Explore Our Services
+              <Button variant="accent" size="lg" href="/contact#booking" className="shadow-modern-lg">
+                Share a Role With Us
               </Button>
-              <Button variant="outline" size="lg" href="/contact" className="border-white text-white hover:bg-white hover:text-[#091266]">
-                Get Started Today
+              <Button variant="outline" size="lg" href="/services" className="border-white text-white hover:bg-white hover:text-[#091266]">
+                Explore Our Services
               </Button>
             </div>
           </div>

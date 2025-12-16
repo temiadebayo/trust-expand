@@ -19,13 +19,14 @@ export async function POST(request: NextRequest) {
       customerEmail,
       customerPhone,
       serviceType,
+      serviceLocation,
       appointmentDate,
       appointmentTime,
       message,
     } = body;
 
     // Validate required fields
-    if (!customerName || !customerEmail || !customerPhone || !serviceType || !appointmentDate || !appointmentTime) {
+    if (!customerName || !customerEmail || !customerPhone || !serviceType || !serviceLocation || !appointmentDate || !appointmentTime) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -57,6 +58,10 @@ export async function POST(request: NextRequest) {
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Service Type:</strong></td>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;">${serviceType}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Service Location:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${serviceLocation}</td>
             </tr>
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Date:</strong></td>

@@ -1,0 +1,1458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LuxeGlow Talent Agency | Beauty Staffing & Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LuxeGlow Talent Agency connects salons, spas, and beauty brands with vetted beauty professionals. View our track record, services, and hire with confidence.">
+  <style>
+    :root {
+      --bg: #fff9fb;
+      --primary: #f072a9;
+      --primary-dark: #d14e88;
+      --accent: #ffc5dd;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #f3e3ec;
+      --shadow-soft: 0 18px 35px rgba(0,0,0,0.06);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --transition-fast: 0.2s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffe5f0 0, var(--bg) 45%, #fff 100%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.25rem 1.1rem 3rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(255,249,251,0.95), rgba(255,249,251,0.92));
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.5rem 1.1rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 40% 60% 50% 70%;
+      background: radial-gradient(circle at 30% 20%, #ffe6f4, #f072a9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 18px rgba(240,114,169,0.35);
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1rem;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: none;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(240,114,169,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(240,114,169,0.5);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(240,114,169,0.4);
+      color: var(--primary-dark);
+    }
+
+    .btn-ghost:hover {
+      background: #fff;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: #111827;
+      transition: transform 0.18s ease, opacity 0.18s ease, top 0.18s ease, bottom 0.18s ease;
+      position: relative;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-toggle span::before {
+      top: -5px;
+    }
+
+    .nav-toggle span::after {
+      bottom: -5px;
+    }
+
+    .nav-toggle.active span {
+      background: transparent;
+    }
+
+    .nav-toggle.active span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle.active span::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      padding: 0 1.1rem 0.75rem;
+    }
+
+    .nav-mobile-menu.open {
+      display: block;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(243, 232, 239, 0.9);
+    }
+
+    .nav-mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .nav-mobile-actions {
+      padding-top: 0.55rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 1.8rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(240,114,169,0.25);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .hero h1 {
+      font-size: 1.75rem;
+      line-height: 1.15;
+      margin: 0 0 0.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary-dark), #ff7ab8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.75rem;
+    }
+
+    .badge-chip {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(240,114,169,0.25);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-note-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 2px solid #bbf7d0;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.12);
+    }
+
+    .hero-aside {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: 26px;
+      padding: 1rem 1rem 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      display: inline-flex;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(255,245,248,0.9);
+      border: 1px solid rgba(240,114,169,0.35);
+      font-size: 0.68rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .hero-pro-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .hero-pro {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fde1ff, #f9a8d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.86rem;
+      color: #4b1643;
+      font-weight: 600;
+    }
+
+    .hero-pro-main {
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .hero-pro-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.76rem;
+    }
+
+    .metric-pill {
+      border-radius: 18px;
+      padding: 0.4rem 0.6rem;
+      background: linear-gradient(135deg, #fff7fb, #ffe8f3);
+      border: 1px solid rgba(240,114,169,0.28);
+    }
+
+    .metric-pill strong {
+      font-size: 0.86rem;
+    }
+
+    .hero-floating {
+      position: absolute;
+      right: 8px;
+      bottom: -4px;
+      transform: translateY(25%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .hero-floating-card {
+      background: rgba(17,24,39,0.94);
+      color: #f9fafb;
+      border-radius: 18px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.72rem;
+      box-shadow: 0 14px 30px rgba(15,23,42,0.5);
+      min-width: 150px;
+    }
+
+    .hero-floating-card span {
+      display: block;
+      font-size: 0.65rem;
+      color: #e5e7eb;
+      margin-top: 0.15rem;
+    }
+
+    /* Section shell */
+    section {
+      margin-top: 2.2rem;
+    }
+
+    .section-heading {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* Clients / Track record */
+    .track-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 0.9rem 0.8rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .track-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .metric {
+      font-size: 0.8rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .metric span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .client-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .logo-pill {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: #f9fafb;
+      border: 1px dashed rgba(148,163,184,0.6);
+      font-size: 0.7rem;
+      color: #4b5563;
+    }
+
+    .results-list {
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .results-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Services */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin: 0 0 0.2rem;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.55rem;
+      background: #f9fafb;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #111827;
+      color: #f9fafb;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .step-body h4 {
+      font-size: 0.9rem;
+      margin: 0 0 0.1rem;
+    }
+
+    .step-body p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .testimonial {
+      background: #0f172a;
+      color: #f9fafb;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      font-size: 5rem;
+      color: rgba(148,163,184,0.15);
+      line-height: 1;
+    }
+
+    .testimonial p {
+      font-size: 0.82rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .testimonial footer {
+      font-size: 0.75rem;
+      color: #cbd5f5;
+    }
+
+    /* CTA */
+    .cta {
+      background: radial-gradient(circle at top left, #ffeaf3, #f072a9);
+      border-radius: 26px;
+      padding: 1.2rem 1rem;
+      color: #111827;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 22px 45px rgba(240,114,169,0.45);
+    }
+
+    .cta h2 {
+      margin: 0 0 0.2rem;
+      font-size: 1.2rem;
+    }
+
+    .cta p {
+      margin: 0 0 0.8rem;
+      font-size: 0.86rem;
+      max-width: 440px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .cta-notes {
+      font-size: 0.75rem;
+      color: #111827;
+    }
+
+    .cta-blur {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255,255,255,0.7), transparent);
+      bottom: -140px;
+      right: -40px;
+      filter: blur(2px);
+      opacity: 0.5;
+    }
+
+    /* Contact */
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .contact-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    form {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      margin-bottom: 0.18rem;
+      color: #4b5563;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      background: #f9fafb;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(240,114,169,0.28);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-hint {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .form-row-inline {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.7rem;
+    }
+
+    .form-row-inline small {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(229,231,235,0.9);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .hero {
+        padding-top: 2.3rem;
+      }
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .contact-section {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      }
+      .track-metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 768px) {
+      .page {
+        padding: 1.5rem 1rem 3rem;
+      }
+      .nav {
+        padding-inline: 1rem;
+      }
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .nav-toggle,
+      .nav-mobile-menu {
+        display: none;
+      }
+      .hero {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 2.1rem;
+      }
+      .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .process-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .testimonials-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .cta {
+        padding-inline: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">LG</div>
+        <div>
+          <div class="brand-text-main">LuxeGlow Talent Agency</div>
+          <div class="brand-text-sub">Beauty professionals for salons & spas</div>
+        </div>
+      </div>
+
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#track-record">Track record</a>
+        <a href="#services">Services</a>
+        <a href="#related-services">Related solutions</a>
+        <a href="#process">How we work</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+          Hire beauty staff
+        </button>
+        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+          Book a call
+        </button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile-menu" id="navMobileMenu">
+      <a href="#track-record">Track record</a>
+      <a href="#services">Services</a>
+      <a href="#related-services">Related solutions</a>
+      <a href="#process">How we work</a>
+      <a href="#contact">Contact</a>
+      <div class="nav-mobile-actions">
+        <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+          Hire beauty staff
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Beauty staffing done-for-you</span>
+        </div>
+        <h1 id="hero-title">
+          Elite <span>beauty professionals</span> for salons, spas & clinics.
+        </h1>
+        <p class="hero-sub">
+          LuxeGlow Talent Agency sources, vets, and places beauty specialists so you can focus on bookings, not CVs.
+          From front-desk to senior aestheticians, we fill your chairs with talent that keeps clients coming back.
+        </p>
+        <div class="hero-badges">
+          <span class="badge-chip">500+ placements made</span>
+          <span class="badge-chip">72-hour average shortlist</span>
+          <span class="badge-chip">Across salons, spas & med-spas</span>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+            Get vetted candidates
+          </button>
+          <button class="btn btn-ghost" onclick="document.getElementById('track-record').scrollIntoView({behavior: 'smooth'})">
+            View our track record
+          </button>
+        </div>
+        <div class="hero-note">
+          <div class="hero-note-dot"></div>
+          <span>Currently placing stylists, nail techs & spa therapists in your area.</span>
+        </div>
+      </div>
+
+      <aside class="hero-aside" aria-label="Snapshot of our talent pool">
+        <div class="hero-card">
+          <div class="hero-card-tag">Live beauty talent dashboard</div>
+          <div class="hero-grid">
+            <div class="hero-pro-list">
+              <div class="hero-pro">
+                <div class="avatar" aria-hidden="true">AM</div>
+                <div>
+                  <div class="hero-pro-main">Senior Hair Stylist</div>
+                  <div class="hero-pro-sub">8 yrs | Balayage & blonding | Upsell pro</div>
+                </div>
+              </div>
+              <div class="hero-pro">
+                <div class="avatar" aria-hidden="true">LN</div>
+                <div>
+                  <div class="hero-pro-main">Spa Therapist</div>
+                  <div class="hero-pro-sub">5 yrs | Facials, body treatments | Med-spa ready</div>
+                </div>
+              </div>
+              <div class="hero-pro">
+                <div class="avatar" aria-hidden="true">RK</div>
+                <div>
+                  <div class="hero-pro-main">Nail Artist</div>
+                  <div class="hero-pro-sub">7 yrs | Soft gel, nail art | High-retention</div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric-pill">
+                <strong>27</strong>
+                <div>Pre-vetted candidates available <br> for immediate interviews.</div>
+              </div>
+              <div class="metric-pill">
+                <strong>94%</strong>
+                <div>Average retention after 6 months across all placements.</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-floating">
+            <div class="hero-floating-card">
+              “LuxeGlow filled 4 stylist chairs in 3 weeks and lifted our client satisfaction scores.”
+              <span>— Boutique salon owner, city centre</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Track Record -->
+    <section id="track-record" aria-labelledby="track-heading">
+      <h2 class="section-heading" id="track-heading">Proven track record in the beauty industry</h2>
+      <p class="section-sub">
+        LuxeGlow is built for beauty businesses only. We understand busy Saturdays, last-minute cancellations, and the
+        cost of an empty chair — and we staff to protect your revenue.
+      </p>
+      <div class="grid">
+        <div class="track-card">
+          <div class="track-metrics">
+            <div class="metric">
+              <strong>500+</strong>
+              <span>Successful placements across salons, spas and med-spas.</span>
+            </div>
+            <div class="metric">
+              <strong>72 hrs</strong>
+              <span>Average time to send your first shortlist of candidates.</span>
+            </div>
+            <div class="metric">
+              <strong>4.8★</strong>
+              <span>Average rating from beauty businesses we partner with.</span>
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.55rem;">
+            Beauty businesses that trust our talent network:
+          </div>
+          <div class="client-logos" aria-label="Sample partners">
+            <span class="logo-pill">GlowHaus Salon Collective</span>
+            <span class="logo-pill">Serenity Spa & Wellness</span>
+            <span class="logo-pill">Velvet Lash Lounge</span>
+            <span class="logo-pill">Urban Chic Nails Studio</span>
+            <span class="logo-pill">Aurelia Med Aesthetics</span>
+          </div>
+          <ul class="results-list">
+            <li>High-end spa increased rebooking rate by 23% after we restructured their therapist team.</li>
+            <li>Franchise salon group filled 9 locations with stylists and assistants before peak holiday season.</li>
+            <li>New lash and brow bar opened with a full team in place four weeks before launch.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 class="section-heading" id="services-heading">Core services for salons, spas & beauty clinics</h2>
+      <p class="section-sub">
+        Whether you need one superstar stylist or an entire spa team, we handle sourcing, vetting, and placement so you
+        never have to rush a hire again.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Permanent beauty staffing</h3>
+          <p>
+            We place vetted, long-term hires for salons, spas, nail studios, med-spas, and beauty clinics. Every
+            candidate is screened for technical skill, attitude, and client-care standards.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Hair stylists & colorists</span>
+            <span class="pill">Barbers</span>
+            <span class="pill">Makeup artists</span>
+            <span class="pill">Nail technicians</span>
+            <span class="pill">Lash & brow artists</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Temporary & seasonal cover</h3>
+          <p>
+            Keep your calendar fully booked even when staff are on leave or during seasonal rush. We provide reliable
+            cover who can adapt quickly to your service menu and pace.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Holiday peaks</span>
+            <span class="pill">Maternity cover</span>
+            <span class="pill">Sickness cover</span>
+            <span class="pill">Event-based bookings</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Front-of-house & management</h3>
+          <p>
+            Beautiful spaces need strong teams at reception and in management. We source people who protect your brand,
+            manage bookings, and keep your operations smooth.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Receptionists</span>
+            <span class="pill">Salon coordinators</span>
+            <span class="pill">Spa managers</span>
+            <span class="pill">Area managers</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Med-spa & aesthetics staffing</h3>
+          <p>
+            For clinics and med-spas, we connect you with licensed professionals who understand protocols, safety, and
+            premium client experience in an aesthetic environment.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Aesthetic nurses</span>
+            <span class="pill">Laser technicians</span>
+            <span class="pill">Skin therapists</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>On-site beauty teams for events</h3>
+          <p>
+            Launching a product, hosting a VIP day, or partnering with a hotel or brand? We assemble on-site beauty
+            teams that deliver a polished experience from first look to last touch-up.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Brand activations</span>
+            <span class="pill">Fashion & photo shoots</span>
+            <span class="pill">Hotel & resort pop-ups</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Talent pipeline building</h3>
+          <p>
+            For growing brands and franchise groups, we build ongoing talent pipelines so you always have qualified
+            candidates ready when you open a new location or add a new service line.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Multi-location salons</span>
+            <span class="pill">Spa groups</span>
+            <span class="pill">Scaling med-spas</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Related services / niche solutions -->
+    <section id="related-services" aria-labelledby="related-heading">
+      <h2 class="section-heading" id="related-heading">Additional solutions for beauty businesses</h2>
+      <p class="section-sub">
+        Beyond day-to-day staffing, LuxeGlow supports you with training, retention, and reputation so your business
+        stays fully booked and your team stays motivated.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Skills testing & trade tests</h3>
+          <p>
+            We can run video-based or in-person technical tests so you see the candidate’s work before you commit. You
+            get a clear picture of their finishing quality and speed.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Hair & color tests</span>
+            <span class="pill">Nail & art tests</span>
+            <span class="pill">Facial & spa protocol tests</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Customer-experience training</h3>
+          <p>
+            Short, practical training for your team on consultation, upselling ethically, handling complaints, and
+            creating a calm, luxury-feeling client journey.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Consultation scripts</span>
+            <span class="pill">Retail recommendation</span>
+            <span class="pill">Rebooking techniques</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Employer branding & job ads</h3>
+          <p>
+            We help you position your salon or spa as the place every stylist wants to work. From job ad copy to
+            benefits positioning, we make your roles stand out.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Job ad copywriting</span>
+            <span class="pill">Role & benefits positioning</span>
+            <span class="pill">Career-page advice</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Pay & commission benchmarking</h3>
+          <p>
+            Not sure if your pay structure is competitive? We benchmark against the local beauty market and suggest
+            structures that attract and retain top talent.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Salary bands</span>
+            <span class="pill">Commission models</span>
+            <span class="pill">Incentive ideas</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Team retention check-up</h3>
+          <p>
+            We review your current team, feedback, and turnover to identify risks before you lose key staff — and help
+            you create a retention action plan.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Onboarding review</span>
+            <span class="pill">Stay-interview templates</span>
+            <span class="pill">Retention roadmap</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Talent for new location launches</h3>
+          <p>
+            Opening a new salon, spa, or clinic? We plan backwards from launch day so your full team is in place,
+            trained, and ready when doors open.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Launch staffing plan</span>
+            <span class="pill">Staggered hiring</span>
+            <span class="pill">Pre-launch training</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" aria-labelledby="process-heading">
+      <h2 class="section-heading" id="process-heading">How LuxeGlow works with you</h2>
+      <p class="section-sub">
+        We keep the process simple and transparent, with clear timelines and communication so you always know what’s
+        happening with your search.
+      </p>
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h4>Define your perfect hire</h4>
+            <p>
+              On a quick call, we map out your role, service list, schedule, culture, and must-have skills so we only
+              send candidates who fit your reality, not just the job title.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h4>Source & pre-vet candidates</h4>
+            <p>
+              We tap into our beauty-only network and shortlist candidates. We pre-interview, check experience, and
+              confirm availability before they ever reach your inbox.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h4>Interviews & trade tests</h4>
+            <p>
+              You receive a curated shortlist with profiles and notes. We help coordinate interviews, trade tests, and
+              trial days to see how they perform on the floor.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-body">
+            <h4>Offer, onboarding & check-ins</h4>
+            <p>
+              Once you choose your hire, we support offer negotiations and start dates, then check in with both sides
+              to make sure the placement is settling in smoothly.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-body">
+            <h4>Replacement support</h4>
+            <p>
+              If a placement doesn’t work out within the agreed guarantee period, we prioritize a replacement search so
+              you’re not left short-staffed.
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-body">
+            <h4>Ongoing talent pipeline</h4>
+            <p>
+              For regular clients, we keep a warm pipeline ready so future roles are faster to fill and you can plan
+              expansion with confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section aria-labelledby="testimonials-heading">
+      <h2 class="section-heading" id="testimonials-heading">What our partners say</h2>
+      <p class="section-sub">
+        We work quietly behind the scenes so your brand shines out front. Here’s what beauty businesses share after
+        partnering with LuxeGlow.
+      </p>
+      <div class="testimonials-grid">
+        <article class="testimonial">
+          <p>
+            “We spent months trying to hire senior stylists. Within ten days of working with LuxeGlow, we had three
+            candidates we would have happily hired. We took two, and our colour bookings are now waitlisted.”
+          </p>
+          <footer>Owner, GlowHaus Salon Collective</footer>
+        </article>
+        <article class="testimonial">
+          <p>
+            “Our spa always struggled with turnover. LuxeGlow helped us hire better and adjust our commission structure.
+            Six months later, our team is stable, and our regular clients are noticing the difference.”
+          </p>
+          <footer>Director, Serenity Spa & Wellness</footer>
+        </article>
+        <article class="testimonial">
+          <p>
+            “We opened a new lash and brow bar and needed a full team ready from day one. LuxeGlow built a pipeline,
+            handled all interviews, and we launched fully staffed weeks ahead of schedule.”
+          </p>
+          <footer>Founder, Velvet Lash Lounge</footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section aria-label="Call to action">
+      <div class="cta">
+        <div>
+          <h2>Ready to stop scrambling for beauty staff?</h2>
+          <p>
+            Send us your role and we’ll respond with a realistic hiring timeline, sample candidate profiles, and pricing
+            for your salon, spa, or clinic — no obligation.
+          </p>
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+              Share a role with us
+            </button>
+            <div class="cta-notes">
+              <div>Average first shortlist in 72 hours.</div>
+              <div>Beauty-only placements — no generic recruiters.</div>
+            </div>
+          </div>
+        </div>
+        <div class="cta-blur" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 class="section-heading" id="contact-heading">Tell us what you need and we’ll take it from here</h2>
+      <p class="section-sub">
+        Share a bit about your beauty business and the role (or roles) you need to fill. We’ll reply with next steps
+        and a suggested hiring plan tailored to you.
+      </p>
+      <div class="contact-section">
+        <div>
+          <p class="contact-copy">
+            Use this form as your starting point. You can adjust fields or integrate it with your booking or CRM system
+            later. Keep it simple for busy salon and spa owners — fewer fields mean more completed enquiries.
+          </p>
+          <ul class="results-list">
+            <li>Ideal response time: under 24 hours to every enquiry.</li>
+            <li>Be clear about next steps: consultation call, email follow-up, or sample candidates.</li>
+            <li>Consider adding WhatsApp or phone contact for urgent hiring needs.</li>
+          </ul>
+        </div>
+
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div>
+              <label for="businessName">Salon / Spa / Clinic name</label>
+              <input type="text" id="businessName" name="businessName" placeholder="Serenity Spa & Wellness" required>
+            </div>
+            <div>
+              <label for="contactName">Your name</label>
+              <input type="text" id="contactName" name="contactName" placeholder="Full name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div>
+              <label for="phone">Phone / WhatsApp (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+234…">
+            </div>
+            <div>
+              <label for="location">Location</label>
+              <input type="text" id="location" name="location" placeholder="City, area">
+            </div>
+            <div>
+              <label for="businessType">Type of beauty business</label>
+              <select id="businessType" name="businessType">
+                <option value="">Select an option</option>
+                <option value="salon">Hair salon / barber shop</option>
+                <option value="spa">Spa / wellness centre</option>
+                <option value="nail">Nail studio</option>
+                <option value="lashbrow">Lash / brow bar</option>
+                <option value="medspa">Med-spa / aesthetics clinic</option>
+                <option value="other">Other beauty business</option>
+              </select>
+            </div>
+            <div>
+              <label for="role">Role(s) you need to hire</label>
+              <textarea id="role" name="role" placeholder="Example: 2 senior stylists, 1 nail tech, 1 receptionist…" required></textarea>
+            </div>
+            <div>
+              <label for="timeline">Ideal start date</label>
+              <input type="text" id="timeline" name="timeline" placeholder="e.g. Within 2 weeks, Next month">
+            </div>
+            <div>
+              <label for="notes">Anything else we should know?</label>
+              <textarea id="notes" name="notes" placeholder="Tell us about your space, opening hours, salary range, and what a perfect hire looks like to you."></textarea>
+              <div class="form-hint">
+                The more details you share, the better we can match you with the right professionals.
+              </div>
+            </div>
+          </div>
+          <div class="form-row-inline">
+            <button type="submit" class="btn btn-primary">
+              Submit enquiry
+            </button>
+            <small>We’ll respond with a tailored hiring plan and next steps.</small>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div>&copy; <span id="year"></span> LuxeGlow Talent Agency. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#hero-title">Back to top</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobileMenu = document.getElementById('navMobileMenu');
+
+    if (navToggle && navMobileMenu) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMobileMenu.classList.toggle('open');
+      });
+
+      navMobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMobileMenu.classList.remove('open');
+        });
+      });
+    }
+
+    // Dynamic year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
