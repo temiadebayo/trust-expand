@@ -3,7 +3,7 @@ import { Button } from './UI/Button';
 
 export const BookingCTA: React.FC = () => {
   return (
-    <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
+    <section className="py-24 bg-[#091266] text-white relative overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">

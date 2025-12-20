@@ -43,10 +43,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email to admin
+    // Send email to partner registration team
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: 'customercare@trustexpand.com', // Change to appropriate email
+      to: 'partner@trustexpandng.com',
       subject: `New Partner Registration - ${fullName} (${selectedTier} Tier)`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

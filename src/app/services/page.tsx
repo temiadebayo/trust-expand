@@ -38,7 +38,7 @@ export default function ServicesPage() {
               </div>
               <div className="w-32 h-32 bg-gray-100 rounded-3xl flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                  src="https://images.unsplash.com/photo-1706696950760-4ee1d997bb51?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Vetted Professional" 
                   className="w-full h-full object-cover rounded-3xl"
                 />
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                 />
               </div>
               <div className="flex-1 order-1 lg:order-2">
-                <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mb-8">
+                <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mb-8">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -84,7 +84,7 @@ export default function ServicesPage() {
           <Card className="p-10 bg-white shadow-modern-lg border border-gray-100">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-1">
-                <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mb-8">
+                <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mb-8">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
               </div>
               <div className="w-32 h-32 bg-gray-100 rounded-3xl flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                  src="https://images.unsplash.com/photo-1614890085618-0e1054da74f8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Professional Training" 
                   className="w-full h-full object-cover rounded-3xl"
                 />
@@ -125,7 +125,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="/images/08.jpeg" 
                   alt="Permanent Beauty Staffing" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -147,7 +147,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="https://plus.unsplash.com/premium_photo-1729776369324-3ad78fd8bace?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Temporary & Seasonal Cover" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -168,7 +168,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="https://plus.unsplash.com/premium_photo-1664474426510-e60b4b8ad43e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Front-of-House & Management" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -189,7 +189,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="https://images.unsplash.com/photo-1720343409646-960f6dcccae3?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Skills Testing & Trade Tests" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -209,7 +209,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Customer Experience Training" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -229,7 +229,7 @@ export default function ServicesPage() {
             <Card className="p-8 bg-white shadow-modern-lg border border-gray-100 group hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1621607501242-f51617711277?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                  src="https://images.unsplash.com/photo-1655865556493-28e5663a51e9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Premium Services" 
                   className="w-full h-48 object-cover rounded-2xl shadow-modern group-hover:scale-110 transition-transform duration-300"
                 />
@@ -274,7 +274,7 @@ export default function ServicesPage() {
             </div>
             
             <div className="flex gap-6">
-              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
                 2
               </div>
               <div>
@@ -298,7 +298,7 @@ export default function ServicesPage() {
             </div>
             
             <div className="flex gap-6">
-              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
                 4
               </div>
               <div>
@@ -322,7 +322,7 @@ export default function ServicesPage() {
             </div>
             
             <div className="flex gap-6">
-              <div className="w-12 h-12 bg-[#5E17EB] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+              <div className="w-12 h-12 bg-[#091266] text-white rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
                 6
               </div>
               <div>
@@ -337,7 +337,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
+      <section className="py-24 bg-[#091266] text-white relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Experience 

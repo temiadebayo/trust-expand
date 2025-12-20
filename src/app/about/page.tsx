@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                src="https://plus.unsplash.com/premium_photo-1661542350224-8e3f095ce053?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Modern Beauty Salon" 
                 className="w-full h-96 object-cover rounded-3xl shadow-modern"
               />
@@ -59,7 +59,7 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="bg-[#5E17EB] text-white p-10 rounded-3xl shadow-modern-lg">
+            <div className="bg-[#091266] text-white p-10 rounded-3xl shadow-modern-lg">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
             {/* Value 2: Respect */}
             <div className="bg-white p-8 rounded-3xl shadow-modern text-center group hover:scale-105 transition-all duration-300 border border-gray-100">
-              <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500">
+              <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
@@ -111,7 +111,7 @@ export default function AboutPage() {
 
             {/* Value 3: Responsibility */}
             <div className="bg-white p-8 rounded-3xl shadow-modern text-center group hover:scale-105 transition-all duration-300 border border-gray-100">
-              <div className="w-16 h-16 bg-[#5E17EB] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500">
+              <div className="w-16 h-16 bg-[#091266] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -141,7 +141,7 @@ export default function AboutPage() {
       {/* Culture Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#5E17EB] text-white p-12 rounded-3xl shadow-modern-lg">
+          <div className="bg-[#091266] text-white p-12 rounded-3xl shadow-modern-lg">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Our Unique Culture
             </h2>

@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/50"></div>
         
         {/* Color overlay */}
-        <div className="absolute inset-0 bg-[#5E17EB] opacity-60"></div>
+        <div className="absolute inset-0 bg-[#091266] opacity-60"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
@@ -83,19 +83,19 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center p-8 bg-gray-50 rounded-3xl">
-              <div className="text-5xl font-bold text-[#5E17EB] mb-4">500+</div>
+              <div className="text-5xl font-bold text-[#091266] mb-4">500+</div>
               <p className="text-gray-600 text-lg">
                 Successful placements across salons, spas and med-spas
               </p>
             </div>
             <div className="text-center p-8 bg-gray-50 rounded-3xl">
-              <div className="text-5xl font-bold text-[#5E17EB] mb-4">72 hrs</div>
+              <div className="text-5xl font-bold text-[#091266] mb-4">72 hrs</div>
               <p className="text-gray-600 text-lg">
                 Average time to send your first shortlist of candidates
               </p>
             </div>
             <div className="text-center p-8 bg-gray-50 rounded-3xl">
-              <div className="text-5xl font-bold text-[#5E17EB] mb-4">4.8★</div>
+              <div className="text-5xl font-bold text-[#091266] mb-4">4.8★</div>
               <p className="text-gray-600 text-lg">
                 Average rating from beauty businesses we partner with
               </p>
@@ -120,7 +120,7 @@ export default function HomePage() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* Core Service Pillars */}
       <section className="py-24 bg-gray-50 relative">
@@ -130,7 +130,7 @@ export default function HomePage() {
               Our Core Service Pillars
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Three fundamental pillars that form the foundation of our comprehensive beauty industry solutions
+              x
             </p>
           </div>
 
@@ -144,7 +144,7 @@ export default function HomePage() {
               <div className="mt-6">
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    src="/images/01.jpeg"
                     alt="Professional Barber" 
                     className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
                   />
@@ -164,7 +164,7 @@ export default function HomePage() {
               <div className="mt-6">
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    src="/images/02.jpeg"
                     alt="Modern Salon Interior" 
                     className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
                   />
@@ -184,7 +184,7 @@ export default function HomePage() {
               <div className="mt-6">
                 <div className="mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    src="/images/03.jpeg"
                     alt="Professional Networking" 
                     className="w-24 h-24 rounded-full object-cover mx-auto shadow-modern group-hover:scale-110 transition-transform duration-300"
                   />
@@ -201,58 +201,24 @@ export default function HomePage() {
       {/* Image Gallery Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#5E17EB] text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#091266] text-center mb-16">  
             Our Work in Action
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="relative group overflow-hidden rounded-2xl shadow-modern">
-              <img 
-                src="https://images.unsplash.com/photo-1621607501242-f51617711277?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Professional Haircut" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold">Professional Haircuts</h3>
+            {[1, 2, 6, 4].map((num) => (
+              <div key={num} className="relative group overflow-hidden rounded-2xl shadow-modern">
+                <img 
+                  src={`/images/0${num}.jpeg`}
+                  alt={`Trust Expand Work ${num}`}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="font-semibold">Our Work</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="relative group overflow-hidden rounded-2xl shadow-modern">
-              <img 
-                src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Beard Styling" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold">Beard Styling</h3>
-                </div>
-              </div>
-            </div>
-            <div className="relative group overflow-hidden rounded-2xl shadow-modern">
-              <img 
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Salon Interior" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold">Modern Salon</h3>
-                </div>
-              </div>
-            </div>
-            <div className="relative group overflow-hidden rounded-2xl shadow-modern">
-              <img 
-                src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Professional Training" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="font-semibold">Expert Training</h3>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -298,7 +264,7 @@ export default function HomePage() {
       </section>
 
       {/* USP Callout */}
-      <section className="py-24 bg-[#5E17EB] text-white relative overflow-hidden">
+      <section className="py-24 bg-[#091266] text-white relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-8">

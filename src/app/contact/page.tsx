@@ -294,7 +294,7 @@ export default function ContactPage() {
       {/* General Contact Information */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-12 text-center bg-[#5E17EB] text-white rounded-2xl shadow-modern-lg">
+          <div className="p-12 text-center bg-[#091266] text-white rounded-2xl shadow-modern-lg">
             <h2 className="text-3xl font-bold mb-12 text-white">General Inquiries</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="group">
@@ -388,7 +388,7 @@ export default function ContactPage() {
       {/* Additional Information */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#5E17EB] text-white p-12 rounded-3xl shadow-modern-lg">
+          <div className="bg-[#091266] text-white p-12 rounded-3xl shadow-modern-lg">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-6">
                 Why Choose Trust Expand?

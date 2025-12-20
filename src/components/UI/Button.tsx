@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
     primary: 'bg-[#091266] text-white hover:bg-[#091266]/90 hover:shadow-modern-lg focus:ring-[#091266]/30',
     secondary: 'bg-[#091266] text-white hover:bg-[#091266]/90 hover:shadow-modern-lg focus:ring-[#091266]/30',
     accent: 'bg-[#5E17EB] text-white hover:bg-[#5E17EB]/90 hover:shadow-modern-lg focus:ring-[#5E17EB]/30',
-    outline: 'border-2 border-[#5E17EB] text-[#5E17EB] hover:bg-[#5E17EB] hover:text-white focus:ring-[#5E17EB]/30',
+    outline: 'border-2 border-[#091266] text-[#091266] hover:bg-[#091266] hover:text-white focus:ring-[#091266]/30',
   };
   
   const sizeClasses = {

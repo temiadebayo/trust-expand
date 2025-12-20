@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #091266;
   --primary: #091266;
-  --secondary: #5E17EB;
+  --secondary: #091266;
   --accent: #5E17EB;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .gradient-secondary {
-  background: #5E17EB;
+  background: #091266;
 }
 
 .gradient-accent {
