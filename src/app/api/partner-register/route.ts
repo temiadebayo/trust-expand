@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     const guarantorRelationship = formData.get('guarantorRelationship') as string;
     const additionalInfo = formData.get('additionalInfo') as string;
 
-    // Get file information (we'll note that files were uploaded)
+    // Get file information and prepare attachments
     const governmentId = formData.get('governmentId') as File | null;
     const professionalCertifications = formData.get('professionalCertifications') as File | null;
     const policeExtract = formData.get('policeExtract') as File | null;
@@ -43,11 +43,49 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Prepare attachments array
+    const attachments: Array<{
+      filename: string;
+      content: Buffer;
+      contentType?: string;
+    }> = [];
+
+    // Process government ID file
+    if (governmentId && governmentId.size > 0) {
+      const buffer = Buffer.from(await governmentId.arrayBuffer());
+      attachments.push({
+        filename: governmentId.name || 'government-id.pdf',
+        content: buffer,
+        contentType: governmentId.type || 'application/pdf',
+      });
+    }
+
+    // Process professional certifications file
+    if (professionalCertifications && professionalCertifications.size > 0) {
+      const buffer = Buffer.from(await professionalCertifications.arrayBuffer());
+      attachments.push({
+        filename: professionalCertifications.name || 'professional-certifications.pdf',
+        content: buffer,
+        contentType: professionalCertifications.type || 'application/pdf',
+      });
+    }
+
+    // Process police extract file
+    if (policeExtract && policeExtract.size > 0) {
+      const buffer = Buffer.from(await policeExtract.arrayBuffer());
+      attachments.push({
+        filename: policeExtract.name || 'police-extract.pdf',
+        content: buffer,
+        contentType: policeExtract.type || 'application/pdf',
+      });
+    }
+
     // Send email to trustexpandng@gmail.com
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: 'trustexpandng@gmail.com',
       subject: `New Partner Registration - ${fullName} (${selectedTier} Tier)`,
+      attachments: attachments.length > 0 ? attachments : undefined,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #091266;">New Partner Registration</h2>
@@ -94,17 +132,22 @@ export async function POST(request: NextRequest) {
           <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Government ID:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${governmentId ? `Uploaded: ${governmentId.name || 'File attached'}` : 'Not provided'}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${governmentId && governmentId.size > 0 ? `✓ Attached: ${governmentId.name || 'government-id.pdf'}` : 'Not provided'}</td>
             </tr>
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Professional Certifications:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${professionalCertifications ? `Uploaded: ${professionalCertifications.name || 'File attached'}` : 'Not provided'}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${professionalCertifications && professionalCertifications.size > 0 ? `✓ Attached: ${professionalCertifications.name || 'professional-certifications.pdf'}` : 'Not provided'}</td>
             </tr>
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Police Extract:</strong></td>
-              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${policeExtract ? `Uploaded: ${policeExtract.name || 'File attached'}` : 'Not provided'}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${policeExtract && policeExtract.size > 0 ? `✓ Attached: ${policeExtract.name || 'police-extract.pdf'}` : 'Not provided'}</td>
             </tr>
           </table>
+          ${attachments.length > 0 ? `
+          <p style="margin-top: 16px; padding: 12px; background: #d1ecf1; border-left: 4px solid #0c5460; border-radius: 4px;">
+            <strong>📎 Note:</strong> ${attachments.length} file(s) attached to this email. Please check the email attachments to review the documents.
+          </p>
+          ` : ''}
 
           <h3 style="color: #091266; margin-top: 24px;">Guarantor Information</h3>
           <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
