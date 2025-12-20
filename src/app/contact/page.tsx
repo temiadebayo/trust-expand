@@ -125,7 +125,7 @@ export default function ContactPage() {
                   Error Sending Booking Request
                 </h3>
                 <p className="text-red-700">
-                  Please try again or contact us directly at bookings@trustexpandng.com
+                  Please try again or contact us directly at trustexpandng@gmail.com
                 </p>
               </div>
             </div>

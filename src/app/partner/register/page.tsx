@@ -212,7 +212,7 @@ export default function PartnerRegisterPage() {
                   Error Submitting Registration
                 </h3>
                 <p className="text-red-700">
-                  Please try again or contact us directly at customercare@trustexpand.com
+                  Please try again or contact us directly at trustexpandng@gmail.com
                 </p>
               </div>
             </div>
