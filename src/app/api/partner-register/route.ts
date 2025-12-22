@@ -34,6 +34,8 @@ export async function POST(request: NextRequest) {
     const governmentId = formData.get('governmentId') as File | null;
     const professionalCertifications = formData.get('professionalCertifications') as File | null;
     const policeExtract = formData.get('policeExtract') as File | null;
+    const guarantorPhotoPassport = formData.get('guarantorPhotoPassport') as File | null;
+    const guarantorValidId = formData.get('guarantorValidId') as File | null;
 
     // Validate required fields
     if (!fullName || !email || !phone || !yearsOfExperience || !selectedTier || !specialization || !currentLocation) {
@@ -77,6 +79,26 @@ export async function POST(request: NextRequest) {
         filename: policeExtract.name || 'police-extract.pdf',
         content: buffer,
         contentType: policeExtract.type || 'application/pdf',
+      });
+    }
+
+    // Process guarantor photo/passport file
+    if (guarantorPhotoPassport && guarantorPhotoPassport.size > 0) {
+      const buffer = Buffer.from(await guarantorPhotoPassport.arrayBuffer());
+      attachments.push({
+        filename: guarantorPhotoPassport.name || 'guarantor-photo-passport.pdf',
+        content: buffer,
+        contentType: guarantorPhotoPassport.type || 'application/pdf',
+      });
+    }
+
+    // Process guarantor valid ID file
+    if (guarantorValidId && guarantorValidId.size > 0) {
+      const buffer = Buffer.from(await guarantorValidId.arrayBuffer());
+      attachments.push({
+        filename: guarantorValidId.name || 'guarantor-valid-id.pdf',
+        content: buffer,
+        contentType: guarantorValidId.type || 'application/pdf',
       });
     }
 
@@ -141,6 +163,14 @@ export async function POST(request: NextRequest) {
             <tr>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Police Extract:</strong></td>
               <td style="padding: 8px; border-bottom: 1px solid #ddd;">${policeExtract && policeExtract.size > 0 ? `✓ Attached: ${policeExtract.name || 'police-extract.pdf'}` : 'Not provided'}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Guarantor Photo/Passport:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${guarantorPhotoPassport && guarantorPhotoPassport.size > 0 ? `✓ Attached: ${guarantorPhotoPassport.name || 'guarantor-photo-passport.pdf'}` : 'Not provided'}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Guarantor Valid ID:</strong></td>
+              <td style="padding: 8px; border-bottom: 1px solid #ddd;">${guarantorValidId && guarantorValidId.size > 0 ? `✓ Attached: ${guarantorValidId.name || 'guarantor-valid-id.pdf'}` : 'Not provided'}</td>
             </tr>
           </table>
           ${attachments.length > 0 ? `

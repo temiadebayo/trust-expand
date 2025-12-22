@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../../components/UI/Button';
 import { Card } from '../../components/UI/Card';
 import { BookingCTA } from '../../components/BookingCTA';
@@ -19,6 +19,17 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Check URL params for preselecting service location
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const location = params.get('location');
+      if (location === 'home') {
+        setFormData(prev => ({ ...prev, serviceLocation: 'Home Service' }));
+      }
+    }
+  }, []);
 
   const getMinDate = () => {
     const tomorrow = new Date();
@@ -136,7 +147,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6 pt-4">
               {/* Service Type */}
               <div>
-                <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="serviceType" className="block text-sm font-medium text-gray-900 mb-2">
                   Service Type *
                 </label>
                 <select
@@ -145,38 +156,84 @@ export default function ContactPage() {
                   value={formData.serviceType}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] bg-white text-gray-900 font-medium transition-all duration-200 hover:border-gray-400"
                 >
-                  <option value="">Select a service</option>
-                  <option value="Haircut & Styling">Haircut & Styling</option>
-                  <option value="Beard Grooming">Beard Grooming</option>
-                  <option value="Hair Treatment">Hair Treatment</option>
-                  <option value="Full Service">Full Service</option>
+                  <option value="" className="text-gray-500">Select a service</option>
+                  <option value="Haircut & Styling" className="text-gray-900">Haircut & Styling</option>
+                  <option value="Beard Grooming" className="text-gray-900">Beard Grooming</option>
+                  <option value="Hair Treatment" className="text-gray-900">Hair Treatment</option>
+                  <option value="Full Service" className="text-gray-900">Full Service</option>
                 </select>
               </div>
 
-              {/* Service Location */}
+              {/* Service Location - Radio Buttons */}
               <div>
-                <label htmlFor="serviceLocation" className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-900 mb-3">
                   Service Location *
                 </label>
-                <select
-                  id="serviceLocation"
-                  name="serviceLocation"
-                  value={formData.serviceLocation}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
-                >
-                  <option value="">Select location type</option>
-                  <option value="In-Store">In-Store Service</option>
-                  <option value="Home Service">Home Service</option>
-                </select>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <label className={`relative flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
+                    formData.serviceLocation === 'In-Store'
+                      ? 'border-[#5E17EB] bg-[#5E17EB]/5'
+                      : 'border-gray-300 hover:border-gray-400 bg-white'
+                  }`}>
+                    <input
+                      type="radio"
+                      name="serviceLocation"
+                      value="In-Store"
+                      checked={formData.serviceLocation === 'In-Store'}
+                      onChange={handleChange}
+                      required
+                      className="sr-only"
+                    />
+                    <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${
+                      formData.serviceLocation === 'In-Store'
+                        ? 'border-[#5E17EB]'
+                        : 'border-gray-400'
+                    }`}>
+                      {formData.serviceLocation === 'In-Store' && (
+                        <div className="w-3 h-3 rounded-full bg-[#5E17EB]"></div>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900">In-Store Service</div>
+                      <div className="text-sm text-gray-600">Visit our salon location</div>
+                    </div>
+                  </label>
+                  <label className={`relative flex items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
+                    formData.serviceLocation === 'Home Service'
+                      ? 'border-[#5E17EB] bg-[#5E17EB]/5'
+                      : 'border-gray-300 hover:border-gray-400 bg-white'
+                  }`}>
+                    <input
+                      type="radio"
+                      name="serviceLocation"
+                      value="Home Service"
+                      checked={formData.serviceLocation === 'Home Service'}
+                      onChange={handleChange}
+                      required
+                      className="sr-only"
+                    />
+                    <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${
+                      formData.serviceLocation === 'Home Service'
+                        ? 'border-[#5E17EB]'
+                        : 'border-gray-400'
+                    }`}>
+                      {formData.serviceLocation === 'Home Service' && (
+                        <div className="w-3 h-3 rounded-full bg-[#5E17EB]"></div>
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900">Home Service</div>
+                      <div className="text-sm text-gray-600">We come to you</div>
+                    </div>
+                  </label>
+                </div>
               </div>
 
               {/* Customer Name */}
               <div>
-                <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="customerName" className="block text-sm font-medium text-gray-900 mb-2">
                   Full Name *
                 </label>
                 <input
@@ -186,14 +243,14 @@ export default function ContactPage() {
                   value={formData.customerName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                   placeholder="John Doe"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="customerEmail" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="customerEmail" className="block text-sm font-medium text-gray-900 mb-2">
                   Email Address *
                 </label>
                 <input
@@ -203,14 +260,14 @@ export default function ContactPage() {
                   value={formData.customerEmail}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                   placeholder="john@example.com"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label htmlFor="customerPhone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="customerPhone" className="block text-sm font-medium text-gray-900 mb-2">
                   Phone Number *
                 </label>
                 <input
@@ -220,7 +277,7 @@ export default function ContactPage() {
                   value={formData.customerPhone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                   placeholder="+234 XXX XXX XXXX"
                 />
               </div>
@@ -228,7 +285,7 @@ export default function ContactPage() {
               {/* Date and Time */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="appointmentDate" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="appointmentDate" className="block text-sm font-medium text-gray-900 mb-2">
                     Appointment Date *
                   </label>
                   <input
@@ -239,11 +296,11 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     min={getMinDate()}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
                   />
                 </div>
                 <div>
-                  <label htmlFor="appointmentTime" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="appointmentTime" className="block text-sm font-medium text-gray-900 mb-2">
                     Appointment Time *
                   </label>
                   <input
@@ -253,14 +310,14 @@ export default function ContactPage() {
                     value={formData.appointmentTime}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
                   />
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                   Additional Message (Optional)
                 </label>
                 <textarea
@@ -269,7 +326,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                   placeholder="Any special requests or notes..."
                 />
               </div>
@@ -452,6 +509,96 @@ export default function ContactPage() {
                 <p className="text-white/90 leading-relaxed">
                   Our commitment to excellence ensures every customer leaves satisfied.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Home Service CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[#091266] to-[#5E17EB] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Professional Beauty Services at Your Doorstep
+              </h2>
+              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                Experience the convenience of premium beauty services in the comfort of your home. 
+                Our vetted professionals bring the salon experience directly to you.
+              </p>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-white mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-lg text-white/90">Fully vetted and certified professionals</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-white mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-lg text-white/90">Premium quality tools and products</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-white mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-lg text-white/90">Flexible scheduling to fit your lifestyle</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-white mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-lg text-white/90">Same professional quality as in-salon</span>
+                </li>
+              </ul>
+              <Button
+                variant="accent"
+                size="lg"
+                href="/contact#booking?location=home"
+                className="bg-white text-[#5E17EB] hover:bg-white/90 shadow-modern-lg text-lg px-8 py-4"
+              >
+                Book Home Service Now
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">At Your Home</h3>
+                      <p className="text-white/80">Comfort and convenience</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Flexible Timing</h3>
+                      <p className="text-white/80">Book at your convenience</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Verified & Safe</h3>
+                      <p className="text-white/80">Background checked professionals</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

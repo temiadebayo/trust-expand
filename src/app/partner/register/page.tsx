@@ -23,6 +23,8 @@ export default function PartnerRegisterPage() {
     guarantorPhone: '',
     guarantorEmail: '',
     guarantorRelationship: '',
+    guarantorPhotoPassport: null as File | null,
+    guarantorValidId: null as File | null,
     policeExtract: null as File | null,
     
     // Additional Information
@@ -95,6 +97,8 @@ export default function PartnerRegisterPage() {
           guarantorPhone: '',
           guarantorEmail: '',
           guarantorRelationship: '',
+          guarantorPhotoPassport: null,
+          guarantorValidId: null,
           policeExtract: null,
           specialization: '',
           currentLocation: '',
@@ -230,7 +234,7 @@ export default function PartnerRegisterPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="fullName" className="block text-sm font-medium text-gray-900 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -240,14 +244,14 @@ export default function PartnerRegisterPage() {
                         value={formData.fullName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                         placeholder="John Doe"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -257,13 +261,13 @@ export default function PartnerRegisterPage() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           placeholder="john@example.com"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
                           Phone Number *
                         </label>
                         <input
@@ -273,7 +277,7 @@ export default function PartnerRegisterPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           placeholder="+234 XXX XXX XXXX"
                         />
                       </div>
@@ -281,7 +285,7 @@ export default function PartnerRegisterPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="yearsOfExperience" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="yearsOfExperience" className="block text-sm font-medium text-gray-900 mb-2">
                           Years of Experience *
                         </label>
                         <select
@@ -290,7 +294,7 @@ export default function PartnerRegisterPage() {
                           value={formData.yearsOfExperience}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] bg-white text-gray-900 font-medium transition-all duration-200 hover:border-gray-400"
                         >
                           <option value="">Select years</option>
                           <option value="3-5">3-5 years</option>
@@ -301,7 +305,7 @@ export default function PartnerRegisterPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="specialization" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="specialization" className="block text-sm font-medium text-gray-900 mb-2">
                           Specialization *
                         </label>
                         <input
@@ -311,14 +315,14 @@ export default function PartnerRegisterPage() {
                           value={formData.specialization}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           placeholder="e.g., Hair Stylist, Barber, Nail Technician"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="currentLocation" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="currentLocation" className="block text-sm font-medium text-gray-900 mb-2">
                         Current Location *
                       </label>
                       <input
@@ -328,13 +332,13 @@ export default function PartnerRegisterPage() {
                         value={formData.currentLocation}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                         placeholder="City, State"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="portfolioUrl" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="portfolioUrl" className="block text-sm font-medium text-gray-900 mb-2">
                         Portfolio/Website URL (Optional)
                       </label>
                       <input
@@ -343,7 +347,7 @@ export default function PartnerRegisterPage() {
                         name="portfolioUrl"
                         value={formData.portfolioUrl}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                         placeholder="https://yourportfolio.com"
                       />
                     </div>
@@ -425,7 +429,7 @@ export default function PartnerRegisterPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="governmentId" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="governmentId" className="block text-sm font-medium text-gray-900 mb-2">
                         Government ID (Passport, Driver's License, or National ID) *
                       </label>
                       <input
@@ -435,7 +439,7 @@ export default function PartnerRegisterPage() {
                         onChange={handleFileChange}
                         accept=".pdf,.jpg,.jpeg,.png"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
                       />
                       {formData.governmentId && (
                         <p className="mt-2 text-sm text-gray-600">Selected: {formData.governmentId.name}</p>
@@ -443,7 +447,7 @@ export default function PartnerRegisterPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="professionalCertifications" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="professionalCertifications" className="block text-sm font-medium text-gray-900 mb-2">
                         Professional Certifications *
                       </label>
                       <input
@@ -454,7 +458,7 @@ export default function PartnerRegisterPage() {
                         accept=".pdf,.jpg,.jpeg,.png"
                         required
                         multiple
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
                       />
                       {formData.professionalCertifications && (
                         <p className="mt-2 text-sm text-gray-600">Selected: {formData.professionalCertifications.name}</p>
@@ -466,7 +470,7 @@ export default function PartnerRegisterPage() {
                       <h3 className="text-lg font-semibold text-[#091266] mb-4">Guarantor Information *</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="guarantorName" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="guarantorName" className="block text-sm font-medium text-gray-900 mb-2">
                             Guarantor Full Name *
                           </label>
                           <input
@@ -476,12 +480,12 @@ export default function PartnerRegisterPage() {
                             value={formData.guarantorName}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="guarantorPhone" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="guarantorPhone" className="block text-sm font-medium text-gray-900 mb-2">
                             Guarantor Phone *
                           </label>
                           <input
@@ -491,12 +495,12 @@ export default function PartnerRegisterPage() {
                             value={formData.guarantorPhone}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="guarantorEmail" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="guarantorEmail" className="block text-sm font-medium text-gray-900 mb-2">
                             Guarantor Email *
                           </label>
                           <input
@@ -506,12 +510,12 @@ export default function PartnerRegisterPage() {
                             value={formData.guarantorEmail}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="guarantorRelationship" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="guarantorRelationship" className="block text-sm font-medium text-gray-900 mb-2">
                             Relationship *
                           </label>
                           <input
@@ -521,15 +525,57 @@ export default function PartnerRegisterPage() {
                             value={formData.guarantorRelationship}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 placeholder-gray-500 transition-all duration-200 hover:border-gray-400"
                             placeholder="e.g., Employer, Colleague, Client"
                           />
                         </div>
                       </div>
                     </div>
 
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                      <h3 className="text-lg font-semibold text-[#091266] mb-4">Guarantor Documents *</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="guarantorPhotoPassport" className="block text-sm font-medium text-gray-900 mb-2">
+                            Guarantor Photo/Passport *
+                          </label>
+                          <input
+                            type="file"
+                            id="guarantorPhotoPassport"
+                            name="guarantorPhotoPassport"
+                            onChange={handleFileChange}
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
+                          />
+                          {formData.guarantorPhotoPassport && (
+                            <p className="mt-2 text-sm text-gray-700">Selected: {formData.guarantorPhotoPassport.name}</p>
+                          )}
+                          <p className="mt-1 text-xs text-gray-600">Upload a clear photo or passport copy</p>
+                        </div>
+                        <div>
+                          <label htmlFor="guarantorValidId" className="block text-sm font-medium text-gray-900 mb-2">
+                            Guarantor Valid ID *
+                          </label>
+                          <input
+                            type="file"
+                            id="guarantorValidId"
+                            name="guarantorValidId"
+                            onChange={handleFileChange}
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
+                          />
+                          {formData.guarantorValidId && (
+                            <p className="mt-2 text-sm text-gray-600">Selected: {formData.guarantorValidId.name}</p>
+                          )}
+                          <p className="mt-1 text-xs text-gray-500">National ID, Driver's License, or Passport</p>
+                        </div>
+                      </div>
+                    </div>
+
                     <div>
-                      <label htmlFor="policeExtract" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="policeExtract" className="block text-sm font-medium text-gray-900 mb-2">
                         Police Extract (Criminal Record Check) *
                       </label>
                       <input
@@ -539,7 +585,7 @@ export default function PartnerRegisterPage() {
                         onChange={handleFileChange}
                         accept=".pdf,.jpg,.jpeg,.png"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-[#5E17EB] focus:border-[#5E17EB] text-gray-900 transition-all duration-200 hover:border-gray-400"
                       />
                       {formData.policeExtract && (
                         <p className="mt-2 text-sm text-gray-600">Selected: {formData.policeExtract.name}</p>
@@ -591,6 +637,12 @@ export default function PartnerRegisterPage() {
                         </p>
                         <p className="text-gray-700">
                           <strong>Police Extract:</strong> {formData.policeExtract ? formData.policeExtract.name : 'Not uploaded'}
+                        </p>
+                        <p className="text-gray-700">
+                          <strong>Guarantor Photo/Passport:</strong> {formData.guarantorPhotoPassport ? formData.guarantorPhotoPassport.name : 'Not uploaded'}
+                        </p>
+                        <p className="text-gray-700">
+                          <strong>Guarantor Valid ID:</strong> {formData.guarantorValidId ? formData.guarantorValidId.name : 'Not uploaded'}
                         </p>
                       </div>
 
